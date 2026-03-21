@@ -3,7 +3,7 @@ project:
   title:        "RO-based security primitives"      # Project title
   author:       "Simon Pankner"      # Your name
   discord:      ""      # Your discord username, for communication and automatically assigning you a Tapeout role (optional)
-  description:  "Three physical security primitives based on Ring-Oscillators: RO-PUF, CRO-PUF, and TRNG."      # One line description of what your project does
+  description:  "Two physical security primitives based on Ring-Oscillators: RO-PUF and TRNG."      # One line description of what your project does
   language:     "Verilog" # other examples include SystemVerilog, Amaranth, VHDL, etc
   clock_hz:     50000000       # Clock frequency in Hz (or 0 if not applicable)
 
@@ -44,9 +44,9 @@ pinout:
 
   # Bidirectional pins
   uio[0]: "we (IN) — write data_in to config register, addr++"
-  uio[1]: "re (IN) — read result/counter to data_out, addr++"
+  uio[1]: "re (IN) — read result to data_out, addr++"
   uio[2]: "start (IN) — begin measurement"
-  uio[3]: "mode[0] (IN) — mode LSB: 00=RO-PUF 01=CRO-PUF 10=TRNG"
+  uio[3]: "mode[0] (IN) — mode LSB: 00=RO-PUF, 10=TRNG"
   uio[4]: "mode[1] (IN) — mode MSB"
   uio[5]: "addr_clr (IN) — reset byte address to 0"
   uio[6]: "busy (OUT) — measurement in progress"
